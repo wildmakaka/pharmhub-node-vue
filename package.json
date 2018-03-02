@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "express": "^4.16.2",
+    "fast-csv": "^2.4.1",
+    "fast-memoize": "^2.3.0",
+    "iconv-lite": "^0.4.19",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "prettier": "^1.11.0",
+    "supertest": "^3.0.0",
+    "tape": "^4.9.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "args": "none"
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "scripts": {
+    "lint": "prettier --no-color --write --loglevel=warn './**/*.js' && eslint -f compact './**/*.js'",
+    "test": "tape ./tests/*"
+  }
+}

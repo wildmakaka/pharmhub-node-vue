@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<link href="styles.css" rel="stylesheet">
+<div id="app" v-cloak>
+  <div v-if="shop">
+    <h1>{{ shop.name }}</h1>
+    <p><a @click.prevent="showShop()" href>← Все магазины</a></p>
+    <dl>
+      <dt><strong>Название:</strong></dt>
+      <dd>{{ shop.name }}</dd>
+      <dt><strong>URL:</strong></dt>
+      <dd><a href="{{ shop.url }}">{{ shop.url }}</a></dd>
+    </dl>
+    <input @input="onSKUInput" autofocus placeholder="Артикул" type="search">
+    <em>Например: KF-090</em>
+    <p v-if="isProductLoading"><em>Загрузка...</em></p>
+    <dl v-else-if="product">
+      <h2>{{ product.name }}</h2>
+      <dt><strong>Артикул:</strong></dt>
+      <dd>{{ product.id }}</dd>
+      <dt><strong>Название:</strong></dt>
+      <dd>{{ product.name }}</dd>
+      <dt><strong>Цена:</strong></dt>
+      <dd>{{ product.price }}</dd>
+    </dl>
+    <p v-else><em>Нет информации о товаре</em></p>
+  </div>
+
+  <div v-else>
+    <h1>Магазины</h1>
+    <ul v-if="shops">
+      <li v-for="shop in shops"><a @click.prevent="showShop(shop)" href>{{ shop.name }}</a></li>
+    </ul>
+    <em v-else>Загрузка...</em>
+  </div>
+</div>
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/app.js"></script>

@@ -1,0 +1,14 @@
+{
+  "columnNames": {
+    "id": "sku",
+    "name": "name",
+    "price": "price"
+  },
+  "csvOptions": {
+    "delimiter": ";"
+  },
+  "encoding": "cp1251",
+  "name": "10x10",
+  "priceListURL": "http://opt.10x10.com.ua/opt10x10.csv",
+  "url": "http://opt.10x10.com.ua/"
+}

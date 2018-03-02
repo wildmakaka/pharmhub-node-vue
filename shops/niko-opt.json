@@ -1,0 +1,14 @@
+{
+  "columnNames": {
+    "id": "Reference",
+    "name": "Name",
+    "price": "Price/UAH"
+  },
+  "csvOptions": {
+    "delimiter": ";"
+  },
+  "encoding": "cp1251",
+  "name": "NIKO-OPT",
+  "priceListURL": "https://niko-opt.com/price_two.csv",
+  "url": "https://niko-opt.com/"
+}
